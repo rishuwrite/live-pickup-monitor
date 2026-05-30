@@ -142,7 +142,9 @@ async function fetchCount(courier){
   if(!res.ok) throw new Error("HTTP "+res.status);
   const data=await res.json();
   return(data?.data?.content||[])
-    .filter(item=>item.status==="CREATED"&&item.count>0&&item.shippingProvider===courier)
+    .filter(item=>item.status==="CREATED"&&item.count>0
+      &&item.shippingProvider.includes(courier)
+      &&!(courier==="DELHIVERY"&&item.shippingProvider==="DELHIVERYPDS"))
     .reduce((sum,item)=>sum+item.count,0);
 }
 
