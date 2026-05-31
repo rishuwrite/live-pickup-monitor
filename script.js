@@ -52,16 +52,9 @@ function courierKey(name) {
  * Returns null if no snapshot has been pushed yet.
  */
 function getCount(name) {
-  if (Object.keys(counts).length === 0) return null; // no data yet
-
+  if (Object.keys(counts).length === 0) return null;
   const key = courierKey(name);
-  const raw = counts[key] ?? 0;
-
-  if (key === "DELHIVERY") {
-    const pds = counts["DELHIVERYPDS"] ?? 0;
-    return Math.max(0, raw - pds);
-  }
-  return raw;
+  return counts[key] ?? 0;
 }
 
 // ─── Count badge HTML ─────────────────────────────────────────────────────────
