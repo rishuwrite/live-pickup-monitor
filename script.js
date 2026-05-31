@@ -259,7 +259,7 @@ function update() {
 async function init() {
   // Load schedule
   try {
-    const res  = await fetch("data/pickups.json");
+    const res  = await fetch("data/pickups.json?v=2");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     pickupData = await res.json();
   } catch (err) {
