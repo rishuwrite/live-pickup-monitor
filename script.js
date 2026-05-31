@@ -26,7 +26,7 @@
 const SHEET_GET_URL = "https://script.google.com/macros/s/AKfycbwDjSwykFzMWHerWI0SA_ROS0uKYSpE09eWY5NaLzUlqG39O2h3W3bfzAWsy7-SYVVW/exec";
 
 // How often to re-fetch counts from sheet (ms). 60s is fine.
-const COUNTS_REFRESH_MS = 60_000;
+const COUNTS_REFRESH_MS = 30_000;
 
 // ─── State ────────────────────────────────────────────────────────────────────
 let pickupData  = [];   // filled after pickups.json fetch
