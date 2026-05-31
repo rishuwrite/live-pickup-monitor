@@ -92,8 +92,8 @@ body {
 
 /* ── Dashboard card ─────────────────────────── */
 .dashboard {
-  max-width: 1200px;
-  margin: 30px auto 140px;
+  
+  margin: 0 0 140px 0;
   background: #fff;
   border-radius: 22px;
   overflow: hidden;
