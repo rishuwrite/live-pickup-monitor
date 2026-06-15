@@ -181,7 +181,7 @@ function update() {
 // ── Init ──────────────────────────────────────────────────────────────────────
 async function init() {
   try {
-    const res = await fetch("data/pickups.json?v=3");
+    const res = await fetch("data/pickups.json?v=5");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     pickupData = await res.json();
   } catch (err) {
