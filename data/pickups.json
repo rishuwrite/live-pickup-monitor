@@ -17,6 +17,7 @@
   {"name": "XPRESSBEES RD 2",      "start": "02:00 PM", "end": "02:30 PM"},
   {"name": "DELCARTB2B RD 2",      "start": "04:00 PM", "end": "04:30 PM"},
   {"name": "BLUEDART RD 5",        "start": "04:00 PM", "end": "04:30 PM"},
+  {"name": "BLUEDART RD 5",        "start": "05:00 PM", "end": "06:00 PM"},
   {"name": "PURPLEDRONE RD 6",     "start": "06:00 PM", "end": "06:30 PM"},
   {"name": "BLUEDART RD 6",        "start": "06:00 PM", "end": "06:30 PM"},
   {"name": "Velocity RD 3",        "start": "06:30 PM", "end": "07:00 PM"},
