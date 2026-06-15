@@ -4,61 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000042">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>Lenskart | Live Pickup Monitor</title>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
-  <!-- ── Header ────────────────────────────────────────────────────── -->
+  <!-- ── Header ────────────────────────────────────────────────── -->
   <div class="header">
     <img
       src="assets/lenskart-logo.png"
       onerror="this.src='https://static-nexs.lenskart.com/images/lenskartLogoForShipment.png'"
       alt="Lenskart Logo"
     >
-    <h1>
-      <span class="live-dot" aria-hidden="true"></span>
-      LENSKART LIVE PICKUP MONITOR 📡
-    </h1>
-    <div id="clock" class="clock" aria-live="polite" aria-label="Current time"></div>
+    <div class="header-center">
+      <h1><span class="live-dot"></span> LENSKART LIVE PICKUP MONITOR 📡</h1>
+      <div id="lastUpdated" class="last-updated stale">⏳ Counts: waiting for first push...</div>
+    </div>
+    <div id="clock" class="clock"></div>
   </div>
 
-  <!-- ── Last Updated Bar ───────────────────────────────────────────── -->
-  <div id="lastUpdated" class="last-updated stale" aria-live="polite">
-    ⏳ Counts: waiting for first push...
-  </div>
-
-  <!-- ── Dashboard ─────────────────────────────────────────────────── -->
+  <!-- ── Dashboard ─────────────────────────────────────────────── -->
   <main class="dashboard" role="main">
 
-    <div class="row running" id="runningRow">
-      <div class="label">Currently Running Pickups</div>
-      <div id="current" class="value" aria-live="polite"></div>
+    <!-- Running -->
+    <div class="slot-card running-card" id="runningRow" style="display:none">
+      <div class="slot-header running-header">
+        <span class="slot-label">🚨 RUNNING NOW</span>
+        <div id="runningMeta" class="slot-meta"></div>
+      </div>
+      <div id="current" class="courier-grid"></div>
+      <div class="progress"><div class="bar" id="progressBar"></div></div>
     </div>
 
-    <div class="row">
-      <div class="label">First Next Upcoming</div>
-      <div id="next1" class="value" aria-live="polite"></div>
-    </div>
+    <!-- Next 3 upcoming -->
+    <div class="upcoming-grid">
+      <div class="slot-card" id="slot0">
+        <div class="slot-header">
+          <span class="slot-label">⏳ UP NEXT</span>
+          <div class="slot-meta" id="meta0"></div>
+        </div>
+        <div class="courier-grid" id="couriers0"></div>
+      </div>
 
-    <div class="row">
-      <div class="label">Second Next Upcoming</div>
-      <div id="next2" class="value" aria-live="polite"></div>
-    </div>
+      <div class="slot-card" id="slot1">
+        <div class="slot-header">
+          <span class="slot-label">⏳ AFTER THAT</span>
+          <div class="slot-meta" id="meta1"></div>
+        </div>
+        <div class="courier-grid" id="couriers1"></div>
+      </div>
 
-    <div class="row" id="thirdRow">
-      <div class="label">Third Next Upcoming</div>
-      <div id="next3" class="value" aria-live="polite"></div>
+      <div class="slot-card" id="slot2">
+        <div class="slot-header">
+          <span class="slot-label">⏳ COMING UP</span>
+          <div class="slot-meta" id="meta2"></div>
+        </div>
+        <div class="courier-grid" id="couriers2"></div>
+      </div>
     </div>
 
   </main>
 
-  <!-- ── Footer ─────────────────────────────────────────────────────── -->
-  <footer class="footer" role="contentinfo">
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="footer">
     SUPPLY CHAIN COMMAND CENTER ⚡
-    <div class="runner" aria-hidden="true">🏃‍♂️📦</div>
+    <span class="runner">🏃‍♂️📦</span>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
